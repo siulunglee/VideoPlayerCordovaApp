@@ -1,0 +1,58 @@
+﻿    <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <title>VideoPlayer</title>
+
+    <!-- VideoPlayer references -->
+    <link href="css/index.css" rel="stylesheet" />
+    
+    <!-- Chang URLs to wherever Video.js files will be hosted -->
+    <link href="scripts/video-js/video-js.css" rel="stylesheet" type="text/css">
+
+    <style>
+        .wrapper {
+            width: 90%;
+            height: 90%;
+        }
+    </style>
+
+    <!-- video.js must be in the <head> for older IEs to work. -->
+    <script src="scripts/video-js/video.dev.js"></script>
+
+</head>
+<body>
+    <p style="font: medium bold">
+        Henry Lee's HTML5 video player with Mobile programming in HTML5 videoplayer with Cordova (phoneGap)<br />
+        I have only created the basic <a href="http://www.centralconnect.ca/videoplayer/apps/videoplayer.apk">video player apk for Android</a> with Cordova.  IOS and Windows 8 will create later.
+    </p>
+
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <!--<script src="cordova.js"></script>-->
+    <script src="scripts/platformOverrides.js"></script>
+
+
+
+    <div>Here is a simple video player that will keep on rotating with ads and trailers .... </div>
+
+
+    <div id="videoplayer" style="font-family: Arial Unicode MS;">
+        <video class="video-js vjs-default-skin" preload="none" controls data-setup="{}" width="400" height="300">
+            <source id="source" src="http://www.centralconnect.ca/videoplayer/videos/CTV-1.mp4" type="video/mp4" />
+        </video>
+    </div>
+
+    <ul id="playlist">
+        <li data-loc="http://www.centralconnect.ca/videoplayer/videos/CTV-ads.mp4" data-type="video/mp4" style="text-decoration:underline">Ads #1</li>
+        <li data-loc="http://www.centralconnect.ca/videoplayer/videos/CTV-1.mp4" data-type="video/mp4" style="text-decoration:underline">CTV 1</li>
+        <li data-loc="http://www.centralconnect.ca/videoplayer/videos/CTV-ads.mp4" data-type="video/mp4" style="text-decoration:underline">Ads #2</li>
+        <li data-loc="http://www.centralconnect.ca/videoplayer/videos/CTV-2.mp4" data-type="video/mp4" style="text-decoration:underline">CTV 2</li>
+    </ul>    
+    <script src="scripts/video-playlist-script.js" type="text/javascript"></script>    
+</body>
+</html>
